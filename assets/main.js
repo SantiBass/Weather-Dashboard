@@ -50,10 +50,10 @@ console.log(arg)
         .then(function (data) {
             //Using console.log to examine the data
             console.log(data);
-
+            
             $("#fiveDaysForecast").text("Five Days Forecast");
-            $("#weatherIcon").scr =" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png";
-            $("#weatherIcon0").text(data.list[0].weather[0].icon);
+            $("#weatherIcon0").src =" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png";
+            //  $("#weatherIcon0").text(data.list[0].weather[0].icon);
             $("#time").text("Date: " + data.list[0].dt_txt);//date and time
             $("#cityName").text("The Weather in "+ data.city.name + " is:"); // name of the city
             $("#tempName").text("Temperature: " + data.list[0].main.temp +" degrees.");// temperature
@@ -64,24 +64,24 @@ console.log(arg)
             
             $("#time1").text("Date: " + data.list[0].dt_txt);//date and time
             // $("#cityName1").text("The Weather in "  + data.city.name + " is:"); // name of the city
-            $("#tempName1").text("Temperature: " + data.list[1].main.temp);// temperature
-            $("#humidityName1").text("Humidity: " + data.list[1].main.humidity);// humidity
-            $("#windSpeed1").text("Wind Speed: " + data.list[1].wind.speed); // wind
+            $("#tempName1").text("Temperature: " + data.list[0].main.temp);// temperature
+            $("#humidityName1").text("Humidity: " + data.list[0].main.humidity);// humidity
+            $("#windSpeed1").text("Wind Speed: " + data.list[0].wind.speed); // wind
             // $(".weatherCard").text()
             $("#weatherIcon2").text(data.list[8].weather[0].icon);
             $("#time2").text("Date: " + data.list[8].dt_txt);//date and time
             // $("#cityName2").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName2").text("Temperature: " + data.list[2].main.temp);// temperature
-            $("#humidityName2").text("Humidity: " + data.list[2].main.humidity);// humidity
-            $("#windSpeed2").text("Wind Speed: " + data.list[2].wind.speed); // wind
+            $("#tempName2").text("Temperature: " + data.list[8].main.temp);// temperature
+            $("#humidityName2").text("Humidity: " + data.list[8].main.humidity);// humidity
+            $("#windSpeed2").text("Wind Speed: " + data.list[8].wind.speed); // wind
             // $(".weatherCard2").text()
             
             $("#weatherIcon3").text(data.list[16].weather[0].icon);
             $("#time3").text("Date: " + data.list[16].dt_txt);//date and time
             // $("#cityName3").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName3").text("Temperature: " + data.list[3].main.temp);// temperature
-            $("#humidityName3").text("Humidity: " + data.list[3].main.humidity);// humidity
-            $("#windSpeed3").text("Wind Speed: " + data.list[3].wind.speed); // wind
+            $("#tempName3").text("Temperature: " + data.list[16].main.temp);// temperature
+            $("#humidityName3").text("Humidity: " + data.list[16].main.humidity);// humidity
+            $("#windSpeed3").text("Wind Speed: " + data.list[16].wind.speed); // wind
             // $(".weatherCard").text()
             
             $("#weatherIcon4").text(data.list[24].weather[0].icon);
