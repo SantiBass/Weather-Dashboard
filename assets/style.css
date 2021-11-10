@@ -1,0 +1,146 @@
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 1;
+    background-color: rgb(90, 86, 82);
+    
+    /*background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+     
+  }
+
+#title{
+  font-size: 60px;
+}
+header{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+background-color: rgb(170, 240, 217);
+border: 5px solid black;
+color: black;
+
+}
+
+.mainBox{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+background-color: rgb(90, 14, 14);
+border: rgb(251, 251, 251) 5px solid;
+  
+}
+aside{
+  border: black 6px solid;
+  width: 20%;
+  
+  max-width: 40vh;
+  min-width: 30vh;
+}
+.sBtn{
+
+  background-color: lightblue;
+  border-radius: 8px;
+  width: 28vh;
+  height: 30px;
+}
+
+input{ 
+  border-radius: 8px;
+  background-color: lightgoldenrodyellow;
+  width: 28vh;
+  height: 60px;
+  border-radius: 8px;
+
+
+}
+#searchArea{
+color:rgb(17, 17, 16)
+}
+
+.weather{
+  
+  background-image: url("./jae-bano-Xbf_4e7YDII-unsplash.jpg");
+   
+
+
+  background-size: cover;
+  width: 85%;
+border: 5px solid fuchsia ;
+}
+#weatherHeader{
+background: rgb(65, 50, 50);
+width: 100%;
+height: auto;
+border: 5px solid white;
+padding: 30px;
+text-align: left;
+background: transparent;
+color: white;
+}
+
+.cardBox{
+ margin-top: 100px; 
+ width: 100%;
+ height: auto;
+ border: 5px solid rgb(52, 238, 52); 
+ display: flex;
+ justify-content: space-between;
+}
+.weatherCard{
+width: 19%;
+height: 50vh;
+border: 2px solid white;
+color: white;
+text-align: left;
+padding:50px  0px 0px 10px;
+background: #000000a0;
+border-radius: 30px;
+
+}
+#gradient {
+  height: 200px;
+  background-image: linear-gradient(to right, rgba(80, 80, 177, 0), rgb(70, 72, 168));
+}
+@supports (font-variation-settings: "wght" 450) {
+    * {
+      
+      font-family: 'Markazi Text';
+      font-weight: 450;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
+
+
+
+/* 
+GIVEN a weather dashboard with form inputs
+WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+WHEN I view the UV index
+THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city */

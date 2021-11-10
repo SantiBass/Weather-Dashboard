@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <title>Wheather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 
 </head>
+
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
+    <header id="gradient">
+        <h1 id="title" >Weather Dashboard</h1>
     </header>
-    
-    <aside>
-        <div > 
-            <h2>
-                Sarch for a City:
-            </h2>
-             <input type="text" placeholder="Search City">
-             <button> Search
+    <div class="mainBox">
+        <aside>
+            <div class="search">
+                <h2>Sarch for a City: <br>
+                    <input id="searchArea" type="text" placeholder="Enter City">
+                </h2>
 
-             </button>
+                <button class="sBtn" onclick="searchingBtn()"> Search</button>
+            </div>
+
+
+        </aside>
+        <div class="weather" >
+            <div id="weatherHeader">
+                <h2><span id="time" > </span> </h2>
+                <h2><span id="weatherIcon" > </span> </h2>
+                <h2><span class="weatherIcon"> </span> </h2>
+                <h2> <span id="cityName"> </span> </h2>
+                <h2> <span id="tempName"> </span></h2>
+                <h2> <span id="humidityName"> </span></h2>
+                <h2> <span id="windSpeed"> </span></h2>
+            </div>
+            <div class="cardBox">
+                <div class="weatherCard">
+                    <h3><span id="time1"> </span> </h2>
+                    <h3> <span id="cityName1"> </span> </h2>
+                    <h3> <span id="tempName1"> </span></h2>
+                    <h3> <span id="humidityName1"> </span></h2>
+                    <h3> <span id="windSpeed1"> </span></h2>
+                </div>
+                <div class="weatherCard">
+                    <h3><span id="time2"> </span> </h2>
+                    <h3> <span id="cityNam2"> </span> </h2>
+                    <h3> <span id="tempName2"> </span></h2>
+                    <h3> <span id="humidityName2"> </span></h2>
+                    <h3> <span id="windSpeed2"> </span></h2>
+                </div>
+                <div class="weatherCard">
+                    <h3><span id="time3"> </span> </h2>
+                    <h3> <span id="cityName3"> </span> </h2>
+                    <h3> <span id="tempName3"> </span></h2>
+                    <h3> <span id="humidityName3"> </span></h2>
+                    <h3> <span id="windSpeed3"> </span></h2>
+                </div>
+                <div class="weatherCard">
+                    <h3><span id="time4"> </span> </h2>
+                    <h3> <span id="cityName4"> </span> </h2>
+                    <h3> <span id="tempName4"> </span></h2>
+                    <h3> <span id="humidityName4"> </span></h2>
+                    <h3> <span id="windSpeed4"> </span></h2>
+                </div>
+                <div class="weatherCard">
+                    <h3><span id="time5"> </span> </h2>
+                    <h3> <span id="cityName5"> </span> </h2>
+                    <h3> <span id="tempName5"> </span></h2>
+                    <h3> <span id="humidityName5" ></span></h2>
+                    <h3> <span id="windSpeed5"> </span></h2>
+                </div>
+
+            </div>
+
         </div>
-       
-
-    </aside>
 
 
-    <script src="main.js"></script>
+
+    </div>
+    </div>
+    <!-- <script src="http://https://api.openweathermap.org/data/2.5/weather?q=Sacramento&appid=ffb1f81a0f40a4da0ddb506ba11d89ce"></script> -->
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
+
 </html>
