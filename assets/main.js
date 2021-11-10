@@ -27,14 +27,12 @@ function getTextValue() {
     document.getElementById("searchArea").innerHTML = storeItem + " " + input;
 }
 
-var weather = {
-    "key": 'ffb1f81a0f40a4da0ddb506ba11d89ce'
-};
+
 
 
 function getApi(arg) {
 console.log(arg)
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
+    
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
     //  $(".weatherIcon").text(data.list[0].weather.weatherIcon);//date and time
     fetch(requestUrl)
