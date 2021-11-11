@@ -24,7 +24,7 @@ function searchingBtn() {
     var input = document.getElementById("searchArea").value;
     
     var para = document.createElement("BUTTON");
-     document.getElementById("searchHistory").appendChild(para)
+     document.addEventListener.getElementById("searchHistory").appendChild(para)
     para.innerHTML = input;
    
     
@@ -34,6 +34,10 @@ function searchingBtn() {
     console.log("here")
 
     getApi(input)
+}
+function historyButton(){
+ 
+
 }
 
 function getTextValue() {
@@ -63,7 +67,7 @@ function getApi(arg) {
 
             $("#fiveDaysForecast").text("Five Days Forecast");
 
-            $("#weatherIcon0").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
+            $("#weatherIcon0").attr("src", `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             // console.log(" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png")
             //  $("#weatherIcon0").text(data.list[0].weather[0].icon);
             $("#time").text("Date: " + data.list[0].dt_txt);//date and time
@@ -73,14 +77,14 @@ function getApi(arg) {
             $("#windSpeed").text("Wind Speed: " + data.list[0].wind.speed); // wind
 
             // $("#weatherIcon1").text(data.list[0].weather[0].icon);
-            $("#weatherIcon1").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
+            $("#weatherIcon1").attr("src", `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             $("#time1").text("Date: " + data.list[0].dt_txt);//date and time
             // $("#cityName1").text("The Weather in "  + data.city.name + " is:"); // name of the city
             $("#tempName1").text("Temperature: " + data.list[0].main.temp);// temperature
             $("#humidityName1").text("Humidity: " + data.list[0].main.humidity);// humidity
             $("#windSpeed1").text("Wind Speed: " + data.list[0].wind.speed); // wind
             // $(".weatherCard").text()
-            $("#weatherIcon2").attr("src", `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`)
+            $("#weatherIcon2").attr("src", `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`)
             $("#time2").text("Date: " + data.list[8].dt_txt);//date and time
             // $("#cityName2").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName2").text("Temperature: " + data.list[8].main.temp);// temperature
@@ -88,7 +92,7 @@ function getApi(arg) {
             $("#windSpeed2").text("Wind Speed: " + data.list[8].wind.speed); // wind
             // $(".weatherCard2").text()
 
-            $("#weatherIcon3").attr("src", `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`)
+            $("#weatherIcon3").attr("src", `https://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`)
             $("#time3").text("Date: " + data.list[16].dt_txt);//date and time
             // $("#cityName3").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName3").text("Temperature: " + data.list[16].main.temp);// temperature
@@ -96,7 +100,7 @@ function getApi(arg) {
             $("#windSpeed3").text("Wind Speed: " + data.list[16].wind.speed); // wind
             // $(".weatherCard").text()
 
-            $("#weatherIcon4").attr("src", `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`)
+            $("#weatherIcon4").attr("src", `https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`)
             $("#time4").text("Date: " + data.list[24].dt_txt);//date and time
             // $("#cityName4").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName4").text("Temperature: " + data.list[24].main.temp);// temperature
@@ -104,7 +108,7 @@ function getApi(arg) {
             $("#windSpeed4").text("Wind Speed: " + data.list[24].wind.speed); // wind
             // $(".weatherCard").text()
 
-            $("#weatherIcon5").attr("src", `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`)
+            $("#weatherIcon5").attr("src", `https://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`)
             $("#time5").text("Date: " + data.list[32].dt_txt);//date and time
             // $("#cityName5").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName5").text("Temperature: " + data.list[32].main.temp);// temperature
