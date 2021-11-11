@@ -45,16 +45,13 @@ p {
 }
 
 aside {
-  /* border: black 6px solid; */
+  border: rgb(235, 224, 224) 6px solid;
   width: 20%;
   padding-top: 30px;
   max-width: 40vh;
   min-width: 30vh;
   background-color: rgb(60, 52, 52);
   color: rgb(185, 217, 255);
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .sBtn {
@@ -64,6 +61,10 @@ aside {
   height: 50px;
 }
 
+button :hover {
+  color: rgb(250, 203, 203);
+}
+
 input {
   /* border-radius: 8px; */
   background-color: lightgoldenrodyellow;
@@ -71,12 +72,33 @@ input {
   height: 50px;
   border-radius: 8px;
 }
-.search{
-width: 100%;
-height: 200px;
+
+.search {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
+
+#line {
+  display: inline-block;
+  border-bottom: 3px solid rgb(121, 118, 121);
+  width: 95%;
+  margin: auto;
+}
+
 #searchArea {
-  color: rgb(1, 1, 1)
+  /*  search input area id */
+  color: rgb(7, 6, 6);
+}
+
+#searchHistory {
+  /* display the input history */
+  display: inline-block;
+  width: 28vh;
+  height: auto;
+  /* background: rgb(235, 214, 214);
+border: rgb(186, 8, 8) solid 2px; */
+  border-radius: 8px;
 }
 
 .weather {
@@ -118,6 +140,7 @@ height: 200px;
   padding: 30px;
 }
 
+
 .weatherCard {
   width: 18%;
   height: 50vh;
@@ -129,13 +152,15 @@ height: 200px;
   border-radius: 30px;
 }
 
-#searchHistory
-{
-  background-color: lightblue;
-  border: 2px solid red ;
-  width: 28vh;
-  height: 50px;
-
+#searchHistory button {
+  margin-top: 50px;
+  background-color: rgb(176, 229, 250);
+  border-radius: 8px;
+  /* border: 2px solid red; */
+  width: 80%;
+  height: 55px;
+  color: rgb(14, 12, 12);
+  font-size: 40px;
 }
 
 #gradient {

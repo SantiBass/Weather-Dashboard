@@ -14,10 +14,20 @@ setInterval(() => {
 
 }, 1000);
 
-
+// function searchingBtn1() {
+//     var para = document.createElement("P");
+//     para.innerHTML = "This is a paragraph.";
+//     document.getElementById("myDIV").appendChild(para);
+//   }
 
 function searchingBtn() {
     var input = document.getElementById("searchArea").value;
+    
+    var para = document.createElement("BUTTON");
+     document.getElementById("searchHistory").appendChild(para)
+    para.innerHTML = input;
+   
+    
     console.log(input);
     localStorage.setItem("storeItem", input)
     document.getElementById("searchArea").value = input;
