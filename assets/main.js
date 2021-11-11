@@ -24,21 +24,26 @@ function searchingBtn() {
     var input = document.getElementById("searchArea").value;
     
     var para = document.createElement("BUTTON");
-     document.addEventListener.getElementById("searchHistory").appendChild(para)
+     document.getElementById("searchHistory").appendChild(para)
     para.innerHTML = input;
    
     
     console.log(input);
     localStorage.setItem("storeItem", input)
+    localStorage.getItem("storeItem", input)
     document.getElementById("searchArea").value = input;
     console.log("here")
 
     getApi(input)
 }
-function historyButton(){
- 
 
-}
+
+document.addEventListener("click", function(){
+    var Button = document.querySelectorAll("BUTTON");
+console.log("history button")
+
+
+});
 
 function getTextValue() {
     $(".search").append("input");
@@ -63,55 +68,57 @@ function getApi(arg) {
         })
         .then(function (data) {
             //Using console.log to examine the data
-            console.log(data);
+            // console.log(data);
 
             $("#fiveDaysForecast").text("Five Days Forecast");
-
-            $("#weatherIcon0").attr("src", `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
+            $("#description0").text(data.list[0].weather[0].description);
+            console.log(data.list[0].weather[0].description)
+            $("#weatherIcon0").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             // console.log(" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png")
             //  $("#weatherIcon0").text(data.list[0].weather[0].icon);
             $("#time").text("Date: " + data.list[0].dt_txt);//date and time
-            $("#cityName").text("The Weather in " + data.city.name + " is:"); // name of the city
+            $("#cityName").text("The Weather in " + data.city.name + " is :" ); // + data.list[0].weather[0].description name of the city
             $("#tempName").text("Temperature: " + data.list[0].main.temp + " degrees.");// temperature
             $("#humidityName").text("Humidity: " + data.list[0].main.humidity);// humidity
             $("#windSpeed").text("Wind Speed: " + data.list[0].wind.speed); // wind
 
-            // $("#weatherIcon1").text(data.list[0].weather[0].icon);
-            $("#weatherIcon1").attr("src", `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
+            $("#description1").text(" The weather for this day has: "+ data.list[0].weather[0].description);
+            $("#weatherIcon1").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             $("#time1").text("Date: " + data.list[0].dt_txt);//date and time
             // $("#cityName1").text("The Weather in "  + data.city.name + " is:"); // name of the city
-            $("#tempName1").text("Temperature: " + data.list[0].main.temp);// temperature
+            $("#tempName1").text("Temperature: " + data.list[0].main.temp + " deg.");// temperature
             $("#humidityName1").text("Humidity: " + data.list[0].main.humidity);// humidity
             $("#windSpeed1").text("Wind Speed: " + data.list[0].wind.speed); // wind
             // $(".weatherCard").text()
-            $("#weatherIcon2").attr("src", `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`)
+            $("#description2").text(" The weather for this day has: "+ data.list[8].weather[0].description);
+            $("#weatherIcon2").attr("src", `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`)
             $("#time2").text("Date: " + data.list[8].dt_txt);//date and time
             // $("#cityName2").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName2").text("Temperature: " + data.list[8].main.temp);// temperature
+            $("#tempName2").text("Temperature: " + data.list[8].main.temp + " deg.");// temperature
             $("#humidityName2").text("Humidity: " + data.list[8].main.humidity);// humidity
             $("#windSpeed2").text("Wind Speed: " + data.list[8].wind.speed); // wind
             // $(".weatherCard2").text()
-
-            $("#weatherIcon3").attr("src", `https://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`)
+            $("#description3").text(" The weather for this day has: "+ data.list[16].weather[0].description);
+            $("#weatherIcon3").attr("src", `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`)
             $("#time3").text("Date: " + data.list[16].dt_txt);//date and time
             // $("#cityName3").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName3").text("Temperature: " + data.list[16].main.temp);// temperature
+            $("#tempName3").text("Temperature: " + data.list[16].main.temp + " deg.");// temperature
             $("#humidityName3").text("Humidity: " + data.list[16].main.humidity);// humidity
             $("#windSpeed3").text("Wind Speed: " + data.list[16].wind.speed); // wind
             // $(".weatherCard").text()
-
-            $("#weatherIcon4").attr("src", `https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`)
+            $("#description4").text(" The weather for this day has: "+ data.list[24].weather[0].description);
+            $("#weatherIcon4").attr("src", `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`)
             $("#time4").text("Date: " + data.list[24].dt_txt);//date and time
             // $("#cityName4").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName4").text("Temperature: " + data.list[24].main.temp);// temperature
+            $("#tempName4").text("Temperature: " + data.list[24].main.temp + " deg.");// temperature
             $("#humidityName4").text("Humidity: " + data.list[24].main.humidity);// humidity
             $("#windSpeed4").text("Wind Speed: " + data.list[24].wind.speed); // wind
             // $(".weatherCard").text()
-
-            $("#weatherIcon5").attr("src", `https://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`)
+            $("#description5").text(" The weather for this day has: "+ data.list[32].weather[0].description);
+            $("#weatherIcon5").attr("src", `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`)
             $("#time5").text("Date: " + data.list[32].dt_txt);//date and time
             // $("#cityName5").text("The Weather in:  "  + data.city.name); // name of the city
-            $("#tempName5").text("Temperature: " + data.list[32].main.temp);// temperature
+            $("#tempName5").text("Temperature: " + data.list[32].main.temp + " deg.");// temperature
             $("#humidityName5").text("Humidity: " + data.list[32].main.humidity);// humidity
             $("#windSpeed5").text("Wind Speed: " + data.list[32].wind.speed); // wind
             // $(".weatherCard").text()
