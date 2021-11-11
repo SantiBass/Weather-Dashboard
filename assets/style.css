@@ -45,7 +45,7 @@ p {
 }
 
 aside {
-  border: rgb(235, 224, 224) 6px solid;
+  border-right: rgb(171, 171, 171) 2px solid; 
   width: 20%;
   padding-top: 30px;
   max-width: 40vh;
@@ -112,7 +112,7 @@ border: rgb(186, 8, 8) solid 2px; */
   background: rgb(65, 50, 50);
   width: 100%;
   height: auto;
-  /* border: 5px solid white; */
+  /* border-bottom: 5px solid white; */
   padding: 30px;
   text-align: left;
   background: transparent;
@@ -133,7 +133,7 @@ border: rgb(186, 8, 8) solid 2px; */
   height: auto;
   margin-top: 100px;
   margin-bottom: 100px;
-  color: rgb(5, 5, 5);
+  color: rgb(255, 255, 255);
   font-size: 60px;
   justify-content: center;
   align-items: center;
@@ -157,7 +157,7 @@ border: rgb(186, 8, 8) solid 2px; */
   background-color: rgb(176, 229, 250);
   border-radius: 8px;
   /* border: 2px solid red; */
-  width: 80%;
+  width: 28vh;
   height: 55px;
   color: rgb(14, 12, 12);
   font-size: 40px;
