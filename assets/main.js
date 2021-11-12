@@ -2,9 +2,10 @@
 // var weatherIcon = document.querySelector("weatherIcon").scr =" http://openweathermap.org/img/wn/icon@2x.png";
 var cityName = document.getElementById('searchArea');
 var storeItem = localStorage.getItem("storeItem");
-console.log(cityName);
+
+// console.log(cityName);
 //    console.log(fetchButtonEl);
-console.log(storeItem);
+// console.log(storeItem);
 // var currentHour = (moment().format('k'));
 // });
 
@@ -20,30 +21,62 @@ setInterval(() => {
 //     document.getElementById("myDIV").appendChild(para);
 //   }
 
+
+//LOOP trhough stored item in local storage and 
+// create buttons
+
 function searchingBtn() {
     var input = document.getElementById("searchArea").value;
     
     var para = document.createElement("BUTTON");
      document.getElementById("searchHistory").appendChild(para)
     para.innerHTML = input;
-   
+    var x = localStorage.setItem('saved', input)
+    var y = localStorage.getItem("s" );
     
-    console.log(input);
-    localStorage.setItem("storeItem", input)
+   para.addEventListener("click", me =>{ 
+       if(x)
+       para.textContent = y;
+    getApi(input);
+    
+    // var savedInput = () =>{
+        
+    //    para.addEventListener("click", savedInput)
+    //     var y = localStorage.getItem("save" );
+    //     if(y){
+    //         console.log()
+    //     };
+    //     }
+ console.log();
+});
+  
+
+   
+
+    // console.log(input);
+    // localStorage.setItem("storeItem", input) create 
+    //create an empty array variable
+    var emptyArray = [];
+   var filledArray = emptyArray.push(input);
+//    console.log (filledArray)
+
+ // push input to the array
+ //stringfy the array
+ //set the array to the local storage
     localStorage.getItem("storeItem", input)
     document.getElementById("searchArea").value = input;
-    console.log("here")
+    // console.log("here")
 
     getApi(input)
-}
+};
 
 
-document.addEventListener("click", function(){
-    var Button = document.querySelectorAll("BUTTON");
-console.log("history button")
+// document.addEventListener("click", function(){
+//     var Button = document.querySelectorAll("BUTTON");
+// console.log("history button")
 
 
-});
+// });
 
 function getTextValue() {
     $(".search").append("input");
@@ -58,7 +91,7 @@ var weather = {
 
 
 function getApi(arg) {
-    console.log(arg)
+    // console.log(arg)
     var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
     //  $(".weatherIcon").text(data.list[0].weather.weatherIcon);//date and time
@@ -72,12 +105,12 @@ function getApi(arg) {
 
             $("#fiveDaysForecast").text("Five Days Forecast");
             $("#description0").text(data.list[0].weather[0].description);
-            console.log(data.list[0].weather[0].description)
+            // console.log(data.list[0].weather[0].description)
             $("#weatherIcon0").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             // console.log(" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png")
             //  $("#weatherIcon0").text(data.list[0].weather[0].icon);
             $("#time").text("Date: " + data.list[0].dt_txt);//date and time
-            $("#cityName").text("The Weather in " + data.city.name + " is :" ); // + data.list[0].weather[0].description name of the city
+            $("#cityName").text("The Weather in " + data.city.name + " is :" ); 
             $("#tempName").text("Temperature: " + data.list[0].main.temp + " degrees.");// temperature
             $("#humidityName").text("Humidity: " + data.list[0].main.humidity);// humidity
             $("#windSpeed").text("Wind Speed: " + data.list[0].wind.speed); // wind
@@ -124,11 +157,11 @@ function getApi(arg) {
             // $(".weatherCard").text()
             // $("#tempName").text(data.list[0].main.temp)
 
-            console.log(data.list[0].main.temp);
-            console.log(data.list[0].dt_txt);
-            console.log(data.city.name);
-            // console.log(data.list[0].weather[0].icon);
-            console.log(data.list[0].main.humidity);
+            // console.log(data.list[0].main.temp);
+            // console.log(data.list[0].dt_txt);
+            // console.log(data.city.name);
+            // // console.log(data.list[0].weather[0].icon);
+            // console.log(data.list[0].main.humidity);
 
 
 
@@ -147,4 +180,4 @@ function getApi(arg) {
 
             // }
         });
-}
+};

@@ -94,7 +94,7 @@ input {
 #searchHistory {
   /* display the input history */
   display: inline-block;
-  width: 28vh;
+  width: auto;
   height: auto;
   /* background: rgb(235, 214, 214);
 border: rgb(186, 8, 8) solid 2px; */
