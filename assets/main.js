@@ -30,7 +30,7 @@ function history() {
          document.getElementById("searchHistory").appendChild(para)
 
         para.innerHTML = cityHistory[i];
-        
+        history() 
     }
 
   }
