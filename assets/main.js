@@ -2,7 +2,13 @@
 // var weatherIcon = document.querySelector("weatherIcon").scr =" http://openweathermap.org/img/wn/icon@2x.png";
 var cityName = document.getElementById('searchArea');
 var storeItem = localStorage.getItem("storeItem");
-
+var day1 = moment().format("MM-DD-YYYY");
+var day2 = moment().add(1, 'days').format("MM-DD-YYYY");
+var day3 = moment().add(2, 'days').format("MM-DD-YYYY");
+var day4 = moment().add(3, 'days').format("MM-DD-YYYY");
+var day5 = moment().add(4, 'days').format("MM-DD-YYYY");
+var day6 = moment().add(5, 'days').format("MM-DD-YYYY");
+var search = document.getElementById("searchArea").value;
 // console.log(cityName);
 //    console.log(fetchButtonEl);
 // console.log(storeItem);
@@ -38,16 +44,7 @@ function searchingBtn() {
        if(x)
        para.textContent = y;
     getApi(input);
-    
-    // var savedInput = () =>{
-        
-    //    para.addEventListener("click", savedInput)
-    //     var y = localStorage.getItem("save" );
-    //     if(y){
-    //         console.log()
-    //     };
-    //     }
- console.log();
+    console.log(para.textContent); 
 });
   
 
@@ -56,8 +53,8 @@ function searchingBtn() {
     // console.log(input);
     // localStorage.setItem("storeItem", input) create 
     //create an empty array variable
-    var emptyArray = [];
-   var filledArray = emptyArray.push(input);
+//     var emptyArray = [];
+//    var filledArray = emptyArray.push(input);
 //    console.log (filledArray)
 
  // push input to the array
@@ -69,6 +66,20 @@ function searchingBtn() {
 
     getApi(input)
 };
+function previousCities(){
+        var citiesArray = [];
+        var storedCities  = localStorage.getItem('cities')
+        if(storedCities){
+            storedCities = JSON.parse(storedCities);
+            for(var i = 0; i < storedCities.length; i++);{
+                citiesArray.push(storedCities[i]);
+            };
+        };
+        if(search){
+            citiesArray.push(search)
+        };
+    };
+    
 
 
 // document.addEventListener("click", function(){
@@ -90,7 +101,7 @@ var weather = {
 };
 
 
-function getApi(arg) {
+function getApi(arg) { 
     // console.log(arg)
     var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
@@ -102,14 +113,14 @@ function getApi(arg) {
         .then(function (data) {
             //Using console.log to examine the data
             // console.log(data);
-
+           
             $("#fiveDaysForecast").text("Five Days Forecast");
             $("#description0").text(data.list[0].weather[0].description);
             // console.log(data.list[0].weather[0].description)
             $("#weatherIcon0").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
             // console.log(" http://openweathermap.org/img/wn/" +(data.list[0].weather[0].icon) + "@2x.png")
             //  $("#weatherIcon0").text(data.list[0].weather[0].icon);
-            $("#time").text("Date: " + data.list[0].dt_txt);//date and time
+            $("#time").text("Date: " + day1);//date and time
             $("#cityName").text("The Weather in " + data.city.name + " is :" ); 
             $("#tempName").text("Temperature: " + data.list[0].main.temp + " degrees.");// temperature
             $("#humidityName").text("Humidity: " + data.list[0].main.humidity);// humidity
@@ -117,23 +128,25 @@ function getApi(arg) {
 
             $("#description1").text(" The weather for this day has: "+ data.list[0].weather[0].description);
             $("#weatherIcon1").attr("src", `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`)
-            $("#time1").text("Date: " + data.list[0].dt_txt);//date and time
+            $("#time1").text("Date: " + day2);//date and time
             // $("#cityName1").text("The Weather in "  + data.city.name + " is:"); // name of the city
             $("#tempName1").text("Temperature: " + data.list[0].main.temp + " deg.");// temperature
             $("#humidityName1").text("Humidity: " + data.list[0].main.humidity);// humidity
             $("#windSpeed1").text("Wind Speed: " + data.list[0].wind.speed); // wind
             // $(".weatherCard").text()
+            
             $("#description2").text(" The weather for this day has: "+ data.list[8].weather[0].description);
             $("#weatherIcon2").attr("src", `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`)
-            $("#time2").text("Date: " + data.list[8].dt_txt);//date and time
+            $("#time2").text("Date: " + day3);//date and time
             // $("#cityName2").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName2").text("Temperature: " + data.list[8].main.temp + " deg.");// temperature
             $("#humidityName2").text("Humidity: " + data.list[8].main.humidity);// humidity
             $("#windSpeed2").text("Wind Speed: " + data.list[8].wind.speed); // wind
             // $(".weatherCard2").text()
+            
             $("#description3").text(" The weather for this day has: "+ data.list[16].weather[0].description);
             $("#weatherIcon3").attr("src", `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`)
-            $("#time3").text("Date: " + data.list[16].dt_txt);//date and time
+            $("#time3").text("Date: " + day4);//date and time
             // $("#cityName3").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName3").text("Temperature: " + data.list[16].main.temp + " deg.");// temperature
             $("#humidityName3").text("Humidity: " + data.list[16].main.humidity);// humidity
@@ -141,7 +154,7 @@ function getApi(arg) {
             // $(".weatherCard").text()
             $("#description4").text(" The weather for this day has: "+ data.list[24].weather[0].description);
             $("#weatherIcon4").attr("src", `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`)
-            $("#time4").text("Date: " + data.list[24].dt_txt);//date and time
+            $("#time4").text("Date: " + day5);//date and time
             // $("#cityName4").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName4").text("Temperature: " + data.list[24].main.temp + " deg.");// temperature
             $("#humidityName4").text("Humidity: " + data.list[24].main.humidity);// humidity
@@ -149,7 +162,7 @@ function getApi(arg) {
             // $(".weatherCard").text()
             $("#description5").text(" The weather for this day has: "+ data.list[32].weather[0].description);
             $("#weatherIcon5").attr("src", `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`)
-            $("#time5").text("Date: " + data.list[32].dt_txt);//date and time
+            $("#time5").text("Date: " + day6);//date and time
             // $("#cityName5").text("The Weather in:  "  + data.city.name); // name of the city
             $("#tempName5").text("Temperature: " + data.list[32].main.temp + " deg.");// temperature
             $("#humidityName5").text("Humidity: " + data.list[32].main.humidity);// humidity
