@@ -1,4 +1,5 @@
-
+var cityHistory = JSON.parse(localStorage.getItem("history")) || [];
+console.log(cityHistory);
 // var weatherIcon = document.querySelector("weatherIcon").scr =" http://openweathermap.org/img/wn/icon@2x.png";
 var cityName = document.getElementById('searchArea');
 var storeItem = localStorage.getItem("storeItem");
@@ -8,100 +9,87 @@ var day3 = moment().add(2, 'days').format("MM-DD-YYYY");
 var day4 = moment().add(3, 'days').format("MM-DD-YYYY");
 var day5 = moment().add(4, 'days').format("MM-DD-YYYY");
 var day6 = moment().add(5, 'days').format("MM-DD-YYYY");
-var search = document.getElementById("searchArea").value;
-// console.log(cityName);
+var searchCities = document.getElementById("searchArea").value;
+// console.log(searchCities);
 //    console.log(fetchButtonEl);
 // console.log(storeItem);
 // var currentHour = (moment().format('k'));
 // });
-
+// this function updates the current time every second.
 setInterval(() => {
     var time = moment().format('MMMM Do YYYY, h:mm:ss a'); //present time
     $("#courrentHour").text(time)
 
 }, 1000);
 
-// function searchingBtn1() {
-//     var para = document.createElement("P");
-//     para.innerHTML = "This is a paragraph.";
-//     document.getElementById("myDIV").appendChild(para);
-//   }
+function history() {
+    var input = document.getElementById("searchArea").value;
+    for (var i=0; i < cityHistory.length; i++){
+
+        var para = document.createElement("BUTTON");
+         document.getElementById("searchHistory").appendChild(para)
+
+        para.innerHTML = cityHistory[i];
+        
+    }
+
+  }
+
+console.log(history);
 
 
-//LOOP trhough stored item in local storage and 
-// create buttons
-
+//searchingBtn() function allows the user to input a City in the search box and click the search button.
+//When the "Search" button is clicked, it will display the searched city as a button on the 
+//left column. If the new button on the left is clicked it will show its info again on the main panel.
 function searchingBtn() {
     var input = document.getElementById("searchArea").value;
-    
+
     var para = document.createElement("BUTTON");
+    
      document.getElementById("searchHistory").appendChild(para)
     para.innerHTML = input;
-    var x = localStorage.setItem('saved', input)
-    var y = localStorage.getItem("s" );
+    var searchedCity = localStorage.setItem('searchedCity', input)
+    localStorage.setItem('searchedCity',input)
+    cityHistory.push(input)
+    console.log(cityHistory)
     
+    localStorage.setItem('history', JSON.stringify(cityHistory))
+// console.log(cityHistory)
+
+    // localStorage.setItem('history', JSON.stringify(cityHistory))
+    var y = localStorage.getItem("searchedCity" );
+    // console.log(y)
    para.addEventListener("click", me =>{ 
-       if(x)
+       if(searchedCity);
        para.textContent = y;
     getApi(input);
-    console.log(para.textContent); 
+    // console.log(para.textContent); 
 });
-  
-
-   
-
-    // console.log(input);
-    // localStorage.setItem("storeItem", input) create 
-    //create an empty array variable
-//     var emptyArray = [];
-//    var filledArray = emptyArray.push(input);
-//    console.log (filledArray)
-
- // push input to the array
- //stringfy the array
- //set the array to the local storage
     localStorage.getItem("storeItem", input)
     document.getElementById("searchArea").value = input;
     // console.log("here")
 
     getApi(input)
 };
-function previousCities(){
-        var citiesArray = [];
-        var storedCities  = localStorage.getItem('cities')
-        if(storedCities){
-            storedCities = JSON.parse(storedCities);
-            for(var i = 0; i < storedCities.length; i++);{
-                citiesArray.push(storedCities[i]);
-            };
-        };
-        if(search){
-            citiesArray.push(search)
-        };
-    };
-    
 
+//
+// function getTextValue() {
+//     $(".search").append("input");
+//     localStorage.getItem("storeItem");
+//     localStorage.setItem("storeItem");
+//     document.getElementById("searchArea").innerHTML = storeItem + " " + input;
 
-// document.addEventListener("click", function(){
-//     var Button = document.querySelectorAll("BUTTON");
-// console.log("history button")
-
-
-// });
-
-function getTextValue() {
-    $(".search").append("input");
-    localStorage.getItem("storeItem");
-    localStorage.setItem("storeItem");
-    document.getElementById("searchArea").innerHTML = storeItem + " " + input;
-}
+// }
 
 var weather = {
     "key": 'ffb1f81a0f40a4da0ddb506ba11d89ce'
 };
 
+// this function generate the data from the input box after the search button is clicked.
+//Also, it uses the API of the weatherapp website.
 
 function getApi(arg) { 
+
     // console.log(arg)
     var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
@@ -112,7 +100,7 @@ function getApi(arg) {
         })
         .then(function (data) {
             //Using console.log to examine the data
-            // console.log(data);
+            console.log(data);
            
             $("#fiveDaysForecast").text("Five Days Forecast");
             $("#description0").text(data.list[0].weather[0].description);
@@ -167,6 +155,7 @@ function getApi(arg) {
             $("#tempName5").text("Temperature: " + data.list[32].main.temp + " deg.");// temperature
             $("#humidityName5").text("Humidity: " + data.list[32].main.humidity);// humidity
             $("#windSpeed5").text("Wind Speed: " + data.list[32].wind.speed); // wind
+           
             // $(".weatherCard").text()
             // $("#tempName").text(data.list[0].main.temp)
 
