@@ -102,7 +102,7 @@ function getApi(arg) {
 
     // console.log(arg)
     var uvValue = ' https://api.openweathermap.org/data/2.5/onecall?lat=41.42226&lon=122.3861&exclude=hourly,daily&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
+    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial?=lat=41.42226&lon=122.3861&exclude=hourly,daily&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
     //  $(".weatherIcon").text(data.list[0].weather.weatherIcon);//date and time
     // var uv = ' https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
@@ -114,7 +114,7 @@ function getApi(arg) {
         })
         .then(function (data) {
             //Using console.log to examine the data
-            // console.log(data);
+             console.log(data);
             var latitude = data.city.coord.lat;
             var longitude = data.city.coord.lon;
             console.log(latitude);
@@ -213,3 +213,7 @@ function getApi(arg) {
             // }
         });
 };
+
+
+
+// https://github.com/SantiBass/Weather-Dashboard/blob/main/assets/main.js
