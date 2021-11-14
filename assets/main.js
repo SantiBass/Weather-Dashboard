@@ -1,4 +1,5 @@
 var cityHistory = JSON.parse(localStorage.getItem("history")) || [];
+localStorage.getItem(cityHistory)
 console.log(cityHistory);
 // var weatherIcon = document.querySelector("weatherIcon").scr =" http://openweathermap.org/img/wn/icon@2x.png";
 var cityName = document.getElementById('searchArea');
@@ -30,12 +31,19 @@ function history() {
          document.getElementById("searchHistory").appendChild(para)
 
         para.innerHTML = cityHistory[i];
-        history() 
+        // history() 
+      para.addEventListener("click", ()=>{
+          localStorage.setItem(cityHistory);
+//   console.log(cityHistory);
+  getApi(input);
+
+       });
+     
     }
 
   }
 
-console.log(history);
+  history();
 
 
 //searchingBtn() function allows the user to input a City in the search box and click the search button.
@@ -50,26 +58,28 @@ function searchingBtn() {
     para.innerHTML = input;
     var searchedCity = localStorage.setItem('searchedCity', input)
     localStorage.setItem('searchedCity',input)
+    localStorage.getItem(input)
     cityHistory.push(input)
-    console.log(cityHistory)
+    // console.log(cityHistory)
     
     localStorage.setItem('history', JSON.stringify(cityHistory))
+    
 // console.log(cityHistory)
 
     // localStorage.setItem('history', JSON.stringify(cityHistory))
     var y = localStorage.getItem("searchedCity" );
     // console.log(y)
    para.addEventListener("click", me =>{ 
-       if(searchedCity);
+       if(searchedCity);{
        para.textContent = y;
-    getApi(input);
+    getApi(input);}
     // console.log(para.textContent); 
 });
     localStorage.getItem("storeItem", input)
     document.getElementById("searchArea").value = input;
     // console.log("here")
 
-    getApi(input)
+    getApi( document.getElementById("searchArea").value)
 };
 
 //
@@ -91,17 +101,37 @@ var weather = {
 function getApi(arg) { 
 
     // console.log(arg)
+    var uvValue = ' https://api.openweathermap.org/data/2.5/onecall?lat=41.42226&lon=122.3861&exclude=hourly,daily&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + arg + '&units=imperial&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
     // var icon = " http://openweathermap.org/img/wn/10@2x.png";
     //  $(".weatherIcon").text(data.list[0].weather.weatherIcon);//date and time
+    // var uv = ' https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=ffb1f81a0f40a4da0ddb506ba11d89ce'
+   
+    
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             //Using console.log to examine the data
-            console.log(data);
-           
+            // console.log(data);
+            var latitude = data.city.coord.lat;
+            var longitude = data.city.coord.lon;
+            console.log(latitude);
+            console.log(longitude);
+         fetch( uvValue)
+            .then(function(response) { 
+                console.log( 'uvValue' + response)
+              return response.json();
+             })
+             .then(function(uvValue) {
+             var currentUV = uvValue.current.uv; 
+        //       var dailyForecastUV = grab from dataTwo
+            })
+     
+            $("#uv").text("The uv is");
+
+
             $("#fiveDaysForecast").text("Five Days Forecast");
             $("#description0").text(data.list[0].weather[0].description);
             // console.log(data.list[0].weather[0].description)
