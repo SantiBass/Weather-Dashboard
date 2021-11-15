@@ -144,7 +144,7 @@ function getApi(arg) {
                     $("#time1").text("Date: " + day2);//date and time
                     // $("#cityName1").text("The Weather in "  + data.city.name + " is:"); // name of the city
                     $("#tempName1").text("Temperature: " + data.list[0].main.temp + " deg.");// temperature
-                    $("#humidityName1").text("Humidity: " + data.list[0].main.humidity);// humidity
+                    $("#humidityName1").text("Humidity: " + data.list[0].main.humidity  + "%");// humidity
                     $("#windSpeed1").text("Wind Speed: " + data.list[0].wind.speed); // wind
                     // $(".weatherCard").text()
 
@@ -153,7 +153,7 @@ function getApi(arg) {
                     $("#time2").text("Date: " + day3);//date and time
                     // $("#cityName2").text("The Weather in:  "  + data.city.name); // name of the city
                     $("#tempName2").text("Temperature: " + data.list[8].main.temp + " deg.");// temperature
-                    $("#humidityName2").text("Humidity: " + data.list[8].main.humidity);// humidity
+                    $("#humidityName2").text("Humidity: " + data.list[8].main.humidity + "%");// humidity
                     $("#windSpeed2").text("Wind Speed: " + data.list[8].wind.speed); // wind
                     // $(".weatherCard2").text()
 
@@ -162,7 +162,7 @@ function getApi(arg) {
                     $("#time3").text("Date: " + day4);//date and time
                     // $("#cityName3").text("The Weather in:  "  + data.city.name); // name of the city
                     $("#tempName3").text("Temperature: " + data.list[16].main.temp + " deg.");// temperature
-                    $("#humidityName3").text("Humidity: " + data.list[16].main.humidity);// humidity
+                    $("#humidityName3").text("Humidity: " + data.list[16].main.humidity  + "%");// humidity
                     $("#windSpeed3").text("Wind Speed: " + data.list[16].wind.speed); // wind
                     // $(".weatherCard").text()
                     $("#description4").text(" The weather for this day has: " + data.list[24].weather[0].description);
@@ -178,7 +178,7 @@ function getApi(arg) {
                     $("#time5").text("Date: " + day6);//date and time
                     // $("#cityName5").text("The Weather in:  "  + data.city.name); // name of the city
                     $("#tempName5").text("Temperature: " + data.list[32].main.temp + " deg.");// temperature
-                    $("#humidityName5").text("Humidity: " + data.list[32].main.humidity);// humidity
+                    $("#humidityName5").text("Humidity: " + data.list[32].main.humidity  + "%");// humidity
                     $("#windSpeed5").text("Wind Speed: " + data.list[32].wind.speed); // wind
 
 
